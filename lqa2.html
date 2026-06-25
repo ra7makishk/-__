@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملزمة مذاكرة | مادة العقيدة – اللقاء الثاني | برنامج متين</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap');
+
+  :root {
+    --green-dark: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #faf7f0;
+    --cream-dark: #f0ead8;
+    --text: #1c1c1c;
+    --text-muted: #5a5a4a;
+    --border: #d4c9a0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Cairo', sans-serif; background: var(--cream); color: var(--text); line-height: 1.9; }
+
+  .header {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    color: white; padding: 36px 24px 28px; text-align: center; position: relative; overflow: hidden;
+  }
+  .header::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .header-badge { display: inline-block; background: var(--gold); color: var(--green-dark); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: 'Amiri', serif; font-size: 28px; font-weight: 700; margin-bottom: 6px; position: relative; }
+  .header p { font-size: 14px; opacity: 0.8; position: relative; }
+
+  .nav { background: var(--green-mid); padding: 0 20px; display: flex; gap: 0; overflow-x: auto; border-bottom: 3px solid var(--gold); }
+  .nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 600; padding: 12px 16px; white-space: nowrap; border-bottom: 3px solid transparent; margin-bottom: -3px; transition: all 0.2s; }
+  .nav a:hover { color: white; border-bottom-color: var(--gold-light); }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  .section { margin-bottom: 32px; background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section-header { background: var(--green-dark); color: white; padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+  .section-num { background: var(--gold); color: var(--green-dark); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .section-header h2 { font-size: 16px; font-weight: 700; }
+  .section-body { padding: 20px 22px; }
+
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media(max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+  .card { background: var(--cream); border: 1px solid var(--border); border-right: 4px solid var(--green-light); border-radius: 8px; padding: 14px 16px; }
+  .card-title { font-size: 13px; font-weight: 700; color: var(--green-mid); margin-bottom: 6px; }
+  .card-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .verse-box { background: linear-gradient(135deg, #f0f8f4, #e8f4ec); border: 1px solid #b7d9c5; border-right: 5px solid var(--green-light); border-radius: 10px; padding: 16px 18px; margin: 12px 0; }
+  .verse-text { font-family: 'Amiri', serif; font-size: 18px; color: var(--green-dark); line-height: 2; margin-bottom: 8px; }
+  .verse-source { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+  .verse-faidah { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #b7d9c5; font-size: 13px; color: var(--green-dark); line-height: 1.8; }
+  .verse-faidah span { font-weight: 700; color: var(--green-mid); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: var(--green-mid); color: white; padding: 10px 14px; text-align: right; font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--cream); }
+  td:first-child { font-weight: 700; color: var(--green-mid); white-space: nowrap; }
+
+  .highlight { background: #fffbea; border: 1px solid #e8d87a; border-right: 4px solid var(--gold); border-radius: 8px; padding: 14px 16px; font-size: 14px; margin: 12px 0; }
+  .highlight strong { color: #7a5c00; }
+
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; position: relative; }
+  .flow-item:not(:last-child)::after { content: ''; position: absolute; right: 19px; top: 44px; width: 2px; height: calc(100% - 16px); background: var(--border); }
+  .flow-circle { width: 40px; height: 40px; background: var(--green-mid); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; position: relative; z-index: 1; }
+  .flow-content { flex: 1; }
+  .flow-title { font-weight: 700; color: var(--green-dark); font-size: 15px; }
+  .flow-sub { font-size: 13px; color: var(--text-muted); margin-top: 2px; line-height: 1.7; }
+
+  .question { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+  .question-q { background: var(--cream-dark); padding: 12px 16px; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .question-q:hover { background: #e8e0cc; }
+  .question-a { padding: 14px 16px; font-size: 14px; color: var(--text-muted); display: none; border-top: 1px solid var(--border); background: white; line-height: 1.8; }
+  .question.open .question-a { display: block; }
+  .arrow { transition: transform 0.2s; font-size: 12px; }
+  .question.open .arrow { transform: rotate(90deg); }
+
+  .tag { display: inline-block; background: var(--green-light); color: var(--green-dark); font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 12px; margin-right: 6px; }
+  .tag.gold { background: var(--gold-light); color: #6b4c00; }
+
+  .pdf-btn { position: fixed; bottom: 24px; left: 24px; background: var(--green-mid); color: white; border: none; border-radius: 50px; padding: 14px 22px; font-family: 'Cairo', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.25); z-index: 1000; transition: background 0.2s, transform 0.1s; }
+  .pdf-btn:hover { background: var(--green-dark); transform: scale(1.04); }
+  .pdf-btn:active { transform: scale(0.97); }
+
+  .footer { text-align: center; padding: 24px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 40px; }
+
+  @media print {
+    .pdf-btn, .nav { display: none !important; }
+    .section { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    .header { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-header { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .question-a { display: block !important; }
+    body { background: white; }
+  }
+
+  .lqa-nav {
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .lqa-nav a { color: var(--green-mid); text-decoration: none; }
+  .lqa-nav a:hover { color: var(--green-dark); text-decoration: underline; }
+  .lqa-current { color: var(--text-muted); }
+  .lqa-home { margin-right: auto; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">برنامج متين – المستوى الثاني</div>
+  <h1>مادة العقيدة | اللقاء الثاني</h1>
+  <p>١ محرم ١٤٤٨ &nbsp;•&nbsp; كتاب التوحيد – الشيخ محمد بن عبد الوهاب رحمه الله</p>
+</div>
+
+<nav class="nav">
+  <a href="#murajaah">مراجعة</a>
+  <a href="#muallif">المؤلف والكتاب</a>
+  <a href="#taqseem">تقسيم الكتاب</a>
+  <a href="#bab1">الباب الأول</a>
+  <a href="#munasaba">مناسبة الأبواب</a>
+  <a href="#asilah">أسئلة</a>
+</nav>
+<div class="lqa-nav">
+  <span class="lqa-current">اللقاء الثاني</span>
+  <a href="index.html" class="lqa-home">🏠 الرئيسية</a>
+  <a href="lqa3.html" class="lqa-next">اللقاء الثالث ←</a>
+</div>
+
+
+<div class="container">
+
+  <!-- 1. مراجعة اللقاء السابق -->
+  <div class="section" id="murajaah">
+    <div class="section-header">
+      <div class="section-num">١</div>
+      <h2>مراجعة اللقاء الأول</h2>
+    </div>
+    <div class="section-body">
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">مصادر قبول العقيدة</div>
+          <div class="card-body">قسّمها العلماء إلى قسمين:<br>
+            • <strong>عقيدة نزلت</strong> من عند الله (الوحي: القرآن والسنة)<br>
+            • <strong>عقيدة صعدت</strong> من الأرض (الفطرة والعقل)
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">أنواع التوحيد</div>
+          <div class="card-body">
+            • <strong>توحيد علمي</strong> = معرفة الله ومعرفة معنى الله<br>
+            • <strong>توحيد عملي</strong> = العمل وعبادة الله<br>
+            دليلهما: ﴿وما خلقت الجن والإنس إلا ليعبدون﴾
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. المؤلف والكتاب -->
+  <div class="section" id="muallif">
+    <div class="section-header">
+      <div class="section-num">٢</div>
+      <h2>المؤلف والكتاب</h2>
+    </div>
+    <div class="section-body">
+      <div class="highlight">
+        <strong>لماذا يكتب العلماء في التوحيد؟</strong> لأنهم يبحثون دائماً عن أهم ما يحتاجه الناس، فلا يجدون شيئاً أهم من التوحيد – وهو أهم من الطعام والشراب. ﴿يا أيها الذين آمنوا استجيبوا لله وللرسول إذا دعاكم لما يحييكم﴾
+      </div>
+
+      <table style="margin-top:8px;">
+        <tr><th>العنصر</th><th>التفصيل</th></tr>
+        <tr>
+          <td>المؤلف</td>
+          <td>الشيخ محمد بن عبد الوهاب رحمه الله – شرح الله صدره للحق من صغره</td>
+        </tr>
+        <tr>
+          <td>دعوته</td>
+          <td>نهى عن عبادة الأشجار والأحجار والقبور والطواغيت – وأبطل كل بدعة وضلالة</td>
+        </tr>
+        <tr>
+          <td>مكانة الكتاب</td>
+          <td>الأكثر انتشاراً في بابه – لأهمية موضوعه وسهولة منهجه وقوة حججه وحاجة الأمة إليه</td>
+        </tr>
+        <tr>
+          <td>طريقة تأليفه</td>
+          <td>كان كل يوم يخرج ويلقي على طلابه نقطة – جمعها الطلاب في ورقة فأصبح كتاباً! (الإخلاص في العمل)</td>
+        </tr>
+        <tr>
+          <td>ترجمته</td>
+          <td>تُرجم إلى لغات عديدة – وله شرّاح كثيرون من بينهم الشيخ عبد الرزاق البدر</td>
+        </tr>
+      </table>
+
+      <div class="highlight" style="margin-top:14px;">
+        <strong>من أبيات محمد بن إسماعيل الأمير في الكتاب ومؤلفه:</strong><br>
+        <em>"وقد جاءت الأخبار عنه بأنه يعيد لنا الشرع الشريف بما يُبدي / ويعمر أركان الشريعة هادماً مشاهد ضلّ الناس فيها عن الرشد"</em><br>
+        (يقصد مشاهد القبور التي صارت محلاً للتعظيم والعبادة)
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. تقسيم كتب التوحيد -->
+  <div class="section" id="taqseem">
+    <div class="section-header">
+      <div class="section-num">٣</div>
+      <h2>تقسيم كتب التوحيد وموضوع الكتاب</h2>
+    </div>
+    <div class="section-body">
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">القسم الأول – إثبات التوحيد</div>
+          <div class="card-body">كتب تتكلم عن الألوهية إيجاباً: أدلة وجود الله من آيات الكون والقرآن والسنة. (مثل: ابن استهدار السعادة وغيره)</div>
+        </div>
+        <div class="card">
+          <div class="card-title">القسم الثاني – نفي الشرك</div>
+          <div class="card-body">كتب تُبيّن التوحيد من خلال بيان المخالف: كتب البدع والشركات الصغيرة والكبيرة</div>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:14px;">
+        <strong>كتاب التوحيد من أيهما؟</strong> من كليهما – يُثبت التوحيد ويبيّن ضده. موضوعه: <strong>توحيد الألوهية (العبادة)</strong> – ما جاء الرسل من أجله وما خُلق الخلق له. ليس عن آيات الكون والربوبية فقط، بل عن: أين أنت من حق الله عليك؟
+      </div>
+
+      <div class="highlight">
+        <strong>مثال بديع من الدرس:</strong> كالأرز الذي تنقّيه – كلما انتهيت تجد حبة أخرى. كذلك التوحيد: لا يكفيك أن تقول "أنا موحّد"، بل لا بد من المراجعة والتدقيق باستمرار – وكتاب التوحيد يُعينك على هذا.
+      </div>
+
+      <p style="font-weight:700; color:var(--green-dark); margin:14px 0 10px;">عدد الأبواب:</p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">الرأي الأول: ٦٦ باباً</div>
+          <div class="card-body">من جعل الباب الأول (كتاب التوحيد) مقدمةً وليس باباً</div>
+        </div>
+        <div class="card">
+          <div class="card-title">الرأي الثاني: ٦٧ باباً</div>
+          <div class="card-body">من جعل الباب الأول باباً مستقلاً ضمن الأبواب</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. الباب الأول وشواهده الستة -->
+  <div class="section" id="bab1">
+    <div class="section-header">
+      <div class="section-num">٤</div>
+      <h2>الباب الأول – كتاب التوحيد الذي هو حق الله على العبيد (٦ شواهد)</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="highlight">
+        <strong>موضوع الباب:</strong> لماذا التوحيد؟ لماذا يجب أن نتعلمه؟ ما أهميته؟<br>
+        <strong>لاحظ:</strong> الشيخ لم يفتتح بمقدمة (كما فعل البخاري في صحيحه) – بل جعل الباب الأول نفسه هو المقدمة.
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">﴿ وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ ﴾</div>
+        <div class="verse-source">سورة الذاريات – الشاهد الأول</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> الغاية من خلق الخلق = عبادة الله = التوحيد.<br>
+          <strong>تنبيه:</strong> ليس لعمارة الأرض فقط! الله غني عن ذلك – أسماؤه أزلية لا تحتاج مظهراً ليُثبتها. الغاية عائدة لنفعنا نحن.
+        </div>
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">﴿ وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَسُولًا أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ ﴾</div>
+        <div class="verse-source">سورة النحل – الشاهد الثاني</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> الغاية من إرسال الرسل = عبادة الله واجتناب الطاغوت.<br>
+          التوحيد هو لا إله إلا الله = إثبات ونفي: إثبات العبادة لله + نفي ما سواه.
+        </div>
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">﴿ وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا ﴾</div>
+        <div class="verse-source">سورة الإسراء – الشاهد الثالث</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> "قضى" هنا = أوجب وأمر. التوحيد أول الوصايا وأعظمها – يتصدر سائر الحقوق.
+        </div>
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">﴿ وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا ﴾</div>
+        <div class="verse-source">سورة النساء – الشاهد الرابع (آية الحقوق العشر)</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> التوحيد لا يتم إلا بالإثبات والنفي معاً = إثبات العبادة لله + نفي الشرك عنه.<br>
+          التوحيد = أول المأمورات. الشرك = أول المنهيات.
+        </div>
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">﴿ قُلْ تَعَالَوْا أَتْلُ مَا حَرَّمَ رَبُّكُمْ عَلَيْكُمْ ۖ أَلَّا تُشْرِكُوا بِهِ شَيْئًا ﴾</div>
+        <div class="verse-source">سورة الأنعام – الشاهد الخامس</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> الشرك = أول المحرمات. التوحيد = أول التشريعات وأول الوصايا.<br>
+          قال ابن مسعود رضي الله عنه: "من أراد أن ينظر إلى وصية محمد ﷺ التي عليها خاتمه فليقرأ هذه الآيات."
+        </div>
+      </div>
+
+      <div class="verse-box">
+        <div class="verse-text">«يا معاذ، أتدري ما حق الله على العباد وما حق العباد على الله؟ حق الله على العباد أن يعبدوه ولا يشركوا به شيئاً، وحق العباد على الله أن لا يعذّب من لا يشرك به شيئاً»</div>
+        <div class="verse-source">حديث معاذ بن جبل رضي الله عنه – متفق عليه – الشاهد السادس</div>
+        <div class="verse-faidah">
+          <span>الاستنباط:</span> التوحيد = أوجب الواجبات. هو حق الله على العباد.<br>
+          <strong>ومن هنا جاء اسم الكتاب:</strong> "التوحيد الذي هو حق الله على العبيد".<br>
+          <strong>فائدة:</strong> النبي ﷺ أخبر معاذاً بهذا لكن نهاه أن يُبشّر الناس خشية الاتكال وترك العمل.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. مناسبة الأبواب ببعضها -->
+  <div class="section" id="munasaba">
+    <div class="section-header">
+      <div class="section-num">٥</div>
+      <h2>مناسبة الأبواب الستة الأولى ببعضها (مجموعة المقدمة)</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="highlight">
+        <strong>قاعدة:</strong> الشيخ لم يضع ترجمة (عنوان باب) إلا إذا كانت ذات معنى وصلة بما قبلها وما بعدها – اقتداءً بالإمام البخاري.
+      </div>
+
+      <div class="flow">
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#1a3a2a;">١</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب الأول – كتاب التوحيد</div>
+            <div class="flow-sub">يُعرّفك بالتوحيد ويُبيّن أهميته = يبني ثقتك وتشوّقك للتعلم</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#2d6a4f;">٢</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب الثاني – فضل التوحيد</div>
+            <div class="flow-sub">بعد ما عرفت التوحيد يُطمعك فيه بذكر ثمراته وفضله = البشارة</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#3a8a60;">٣</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب الثالث – من حقّق التوحيد</div>
+            <div class="flow-sub">دفعك للمزيد: كيف تُتمّ توحيدك وتكمّله لتدخل الجنة بغير حساب</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#c9a84c; color:#1a3a2a;">٤</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب الرابع – الخوف من الشرك</div>
+            <div class="flow-sub">بعد ما اشتقت للتوحيد يُحذّرك من ضده = لا تطمئن وتغتر <span class="tag gold">النذارة</span></div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#8a5a1a; color:white;">٥</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب الخامس – الدعوة إلى شهادة لا إله إلا الله</div>
+            <div class="flow-sub">بعد ما حقّقت التوحيد في نفسك اذهب وادعُ به غيرك</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-circle" style="background:#4a2080; color:white;">٦</div>
+          <div class="flow-content">
+            <div class="flow-title">الباب السادس – تفسير التوحيد</div>
+            <div class="flow-sub">عشان تدعو لازم تفهم التوحيد أعمق = تفسير الشهادة وبيان معناها الكامل</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight" style="margin-top:16px;">
+        <strong>خلاصة التدرج:</strong> اعرف ← اشتق ← أتمم ← احذر ← ادعُ ← افهم أعمق
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. تقسيم الكتاب الكامل -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">٦</div>
+      <h2>خريطة الكتاب الكاملة (مجموعات الأبواب)</h2>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr><th>المجموعة</th><th>الأبواب</th><th>الموضوع</th></tr>
+        <tr><td>المقدمة</td><td>١–٦</td><td>التوحيد وأهميته وثمراته والدعوة إليه</td></tr>
+        <tr><td>الشرك الأصغر والأكبر</td><td>٧–١٤</td><td>تفسير التوحيد بضده</td></tr>
+        <tr><td>بطلان عبادة غير الله</td><td>١٥–١٨</td><td>البراهين على قُبح ما عُبد من دون الله</td></tr>
+        <tr><td>أسباب الشرك</td><td>١٩–٢١</td><td>الغلو في الصالحين وكيف بدأ الشرك</td></tr>
+        <tr><td>حمى التوحيد</td><td>٢٢</td><td>سد الذرائع المؤدية للشرك</td></tr>
+        <tr><td>وقوع الشرك في هذه الأمة</td><td>٢٣–٣٠</td><td>السحر والكهانة والتطير والتنجيم...</td></tr>
+        <tr><td>شرك أعمال القلوب</td><td>٣١–٣٩</td><td>شرك المحبة والخوف والتوكل والرياء... <span class="tag" style="font-size:10px;">أهم ↑</span></td></tr>
+        <tr><td>شرك الألفاظ</td><td>٤٠–٦٧</td><td>وينتهي بـ "ما قدروا الله حق قدره"</td></tr>
+      </table>
+
+      <div class="highlight" style="margin-top:14px;">
+        <strong>النقلة الجميلة في النصف الثاني:</strong> الشيخ ينتقل من شرك الأفعال والأقوال (أبواب ١–٣٠) إلى <strong>شرك القلوب</strong> (أبواب ٣١–٣٩) – وهذا تدرج من مهم إلى أهم! لأن العمل القلبي إذا صلح لا يُخلط صاحبه في النار مهما كان عنده ذنوب وزلات.
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. أسئلة -->
+  <div class="section" id="asilah">
+    <div class="section-header">
+      <div class="section-num">٧</div>
+      <h2>بنك الأسئلة – اختبر نفسك</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">ما أقسام مصادر قبول العقيدة؟ <span class="arrow">◄</span></div>
+        <div class="question-a">قسمان: عقيدة نزلت (الوحي: القرآن والسنة) وعقيدة صعدت (الفطرة والعقل).</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">لماذا كان العلماء يكتبون في التوحيد؟ <span class="arrow">◄</span></div>
+        <div class="question-a">لأنهم كانوا دائماً يبحثون عن أهم ما يحتاجه الناس، فلم يجدوا شيئاً أهم من التوحيد – وهو أهم من الطعام والشراب. وهذا هو نهج الدعوة الصحيح: ابدأ بما يحتاجه الناس فعلاً.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">ما اسم الكتاب الكامل؟ وما وجه تسميته؟ <span class="arrow">◄</span></div>
+        <div class="question-a">"كتاب التوحيد الذي هو حق الله على العبيد" – مأخوذ من حديث معاذ: "حق الله على العباد أن يعبدوه ولا يشركوا به شيئاً." فالكتاب كله يُذكّرك بالواجب الأول عليك.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">كيف أُلِّف الكتاب؟ وما العبرة؟ <span class="arrow">◄</span></div>
+        <div class="question-a">كان الشيخ يخرج كل يوم ويلقي على طلابه نقطة، فجمع الطلاب ما قاله في ورقة فأصبح هذا الكتاب الذي يُدرَّس في العالم كله! العبرة: الإخلاص في العمل ولو بدا صغيراً.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">كم شاهداً في الباب الأول؟ اذكرها مرتبة. <span class="arrow">◄</span></div>
+        <div class="question-a">
+          ١. ﴿وما خلقت الجن والإنس إلا ليعبدون﴾ – الغاية من الخلق<br>
+          ٢. ﴿ولقد بعثنا في كل أمة رسولاً أن اعبدوا الله واجتنبوا الطاغوت﴾ – الغاية من الرسل<br>
+          ٣. ﴿وقضى ربك ألا تعبدوا إلا إياه﴾ – أول الوصايا<br>
+          ٤. ﴿واعبدوا الله ولا تشركوا به شيئاً﴾ – التوحيد لا يتم إلا بالإثبات والنفي<br>
+          ٥. ﴿قل تعالوا أتلُ ما حرم ربكم... ألا تشركوا به شيئاً﴾ – الشرك أول المحرمات<br>
+          ٦. حديث معاذ – التوحيد أوجب الواجبات
+        </div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">ما الفرق بين "توحيد علمي" و"توحيد عملي"؟ <span class="arrow">◄</span></div>
+        <div class="question-a">التوحيد العلمي = معرفة الله ومعرفة معناه (العلم بالله). التوحيد العملي = العمل وعبادة الله وإفراده بها (التطبيق). كلاهما واجب ودليلهما: ﴿وما خلقت الجن والإنس إلا ليعبدون﴾.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">لماذا ينتقل الشيخ في النصف الثاني من الكتاب إلى شرك القلوب؟ <span class="arrow">◄</span></div>
+        <div class="question-a">لأن الأعمال القلبية أعظم من الأعمال الظاهرة – الخارج يعتمد على القلب. والعمل القلبي إذا صلح لم يُخلط صاحبه في النار مهما كان عنده ذنوب. فهو تدرج من مهم إلى أهم.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">لماذا نهى النبي ﷺ معاذاً أن يُبشّر الناس بحديث "حق العباد على الله"؟ <span class="arrow">◄</span></div>
+        <div class="question-a">خشية أن يتكل الناس عليها ويتركوا العمل. يعني لا يظن أحد أنه ينجو بمجرد التلفظ بالشهادة دون إتقان التوحيد وتحقيقه.</div>
+      </div>
+
+      <div class="question" onclick="this.classList.toggle('open')">
+        <div class="question-q">اشرح مناسبة الأبواب الستة الأولى ببعضها. <span class="arrow">◄</span></div>
+        <div class="question-a">الباب ١: يُعرّفك بالتوحيد ← الباب ٢: يُطمعك فيه بذكر الثمرات ← الباب ٣: يدفعك لإتمامه ← الباب ٤: يحذّرك من الشرك ← الباب ٥: يأمرك بالدعوة إليه ← الباب ٦: يُفسّره لك حتى تدعو على بصيرة. التدرج: اعرف ← اشتق ← أتمم ← احذر ← ادعُ ← افهم أعمق.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  برنامج متين – المستوى الثاني &nbsp;•&nbsp; اللقاء الثاني &nbsp;•&nbsp; ملزمة للمذاكرة الشخصية
+</div>
+
+<button class="pdf-btn" onclick="downloadPDF()">
+  <span>⬇</span> تحميل PDF
+</button>
+
+<script>
+  function downloadPDF() {
+    document.querySelectorAll('.question').forEach(q => q.classList.add('open'));
+    const btn = document.querySelector('.pdf-btn');
+    btn.style.display = 'none';
+    window.print();
+    setTimeout(() => { btn.style.display = 'flex'; }, 1000);
+  }
+</script>
+
+</body>
+</html>
